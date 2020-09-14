@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: mvc/server
+    container_name: server-mvc
+    ports:
+      - "8080:8080"
+    networks:
+      - development-network
+    volumes:
+      - ".:/var/www/html/"
+    command: php -S 0.0.0.0:8080 -t public_html/
+  database:
+    image: mysql:5.7
+    container_name: database-mvc
+    ports:
+      - "3306:3306"
+    networks:
+      - development-network
+    volumes:
+      - "./var/lib/mysql:/var/lib/mysql"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  adminer:
+    image: adminer
+    container_name: adminer-mvc
+    ports:
+      - 9090:8080
+    networks:
+      - development-network
+networks:
+  development-network:
+    driver: bridge

@@ -1,0 +1,28 @@
+{
+  "name": "estrutura-mvc",
+  "version": "1.0.0",
+  "description": "Estrutura de MVC com PHP, Docker, e Bootstrap",
+  "main": "index.js",
+  "repository": "https://github.com/bymatheus/mvc-php.git",
+  "author": "Matheus Camargo Xavier <matheuscx@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.14.1"
+  }
+}
